@@ -1112,6 +1112,11 @@ dtb-$(CONFIG_TARGET_PRESIDIO_ASIC) += ca-presidio-engboard.dtb
 
 dtb-$(CONFIG_TARGET_IMX8MM_CL_IOT_GATE) += imx8mm-cl-iot-gate.dtb
 
+dtb-$(CONFIG_ARCH_NPCM7xx) += \
+	nuvoton-npcm750-buv.dtb \
+	nuvoton-npcm750-evb.dtb \
+	nuvoton-npcm750-olympus.dtb
+
 targets += $(dtb-y)
 
 # Add any required device tree compiler flags here
