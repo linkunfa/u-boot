@@ -40,6 +40,7 @@ static int do_rng(struct cmd_tbl *cmdtp, int flag, int argc, char *const argv[])
 	}
 
 	free(buf);
+
 	return ret;
 }
 

@@ -29,7 +29,6 @@ endif
 endif
 obj-$(CONFIG_ALI152X) += ali512x.o
 obj-$(CONFIG_ALTERA_SYSID) += altera_sysid.o
-obj-$(CONFIG_ARCH_NPCM) += npcm_host_intf.o
 obj-$(CONFIG_ATSHA204A) += atsha204a-i2c.o
 obj-$(CONFIG_CBMEM_CONSOLE) += cbmem_console.o
 obj-$(CONFIG_DS4510)  += ds4510.o
@@ -56,7 +55,12 @@ obj-$(CONFIG_NUVOTON_NCT6102D) += nuvoton_nct6102d.o
 obj-$(CONFIG_P2SB) += p2sb-uclass.o
 obj-$(CONFIG_PCA9551_LED) += pca9551_led.o
 obj-$(CONFIG_$(SPL_)PWRSEQ) += pwrseq-uclass.o
-obj-$(CONFIG_QFW) += qfw.o
+ifdef CONFIG_QFW
+obj-y += qfw.o
+obj-$(CONFIG_QFW_PIO) += qfw_pio.o
+obj-$(CONFIG_QFW_MMIO) += qfw_mmio.o
+obj-$(CONFIG_SANDBOX) += qfw_sandbox.o
+endif
 obj-$(CONFIG_ROCKCHIP_EFUSE) += rockchip-efuse.o
 obj-$(CONFIG_ROCKCHIP_OTP) += rockchip-otp.o
 obj-$(CONFIG_SANDBOX) += syscon_sandbox.o misc_sandbox.o
@@ -77,4 +81,3 @@ obj-$(CONFIG_MICROCHIP_FLEXCOM) += microchip_flexcom.o
 obj-$(CONFIG_K3_AVS0) += k3_avs.o
 obj-$(CONFIG_ESM_K3) += k3_esm.o
 obj-$(CONFIG_ESM_PMIC) += esm_pmic.o
-obj-$(CONFIG_NPCM_OTP) += npcm_otp.o

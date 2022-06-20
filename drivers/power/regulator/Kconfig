@@ -312,6 +312,16 @@ config DM_REGULATOR_STPMIC1
 	by the PMIC device. This driver is controlled by a device tree node
 	which includes voltage limits.
 
+config DM_REGULATOR_ANATOP
+	bool "Enable driver for ANATOP regulators"
+	depends on DM_REGULATOR
+	select REGMAP
+	select SYSCON
+	help
+	Enable support for the Freescale i.MX on-chip ANATOP LDO
+	regulators. It is recommended that this option be enabled on
+	i.MX6 platform.
+
 config SPL_DM_REGULATOR_STPMIC1
 	bool "Enable driver for STPMIC1 regulators in SPL"
 	depends on SPL_DM_REGULATOR && PMIC_STPMIC1
@@ -354,10 +364,10 @@ config DM_REGULATOR_TPS65941
 	be configured in multi phase modes & 4 LDOs. The driver implements
 	get/set api for value and enable.
 
-config DM_REGULATOR_NPCM8XX
-	bool "Enable driver for NPCM8xx voltage supply"
-	depends on DM_REGULATOR && ARCH_NPCM8XX
-	help
-	  Enable support for configuring voltage supply on NPCM8XX SoC. The
-	  voltage supplies support two voltage levels and the driver implements
-	  get/set api for setting the value.
+config DM_REGULATOR_SCMI
+	bool "Enable driver for SCMI voltage domain regulators"
+	depends on DM_REGULATOR
+	select SCMI_AGENT
+        help
+          Enable this option if you want to support regulators exposed through
+	  the SCMI voltage domain protocol by a SCMI server.

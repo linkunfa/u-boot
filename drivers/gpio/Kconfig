@@ -495,10 +495,4 @@ config NX_GPIO
 	  The GPIOs for a device are defined in the device tree with one node
 	  for each bank.
 
-config NPCM_GPIO
-	bool "NuvoTon NPCM GPIO driver"
-	depends on DM_GPIO
-	help
-	  Support GPIO controllers on NuvoTon NPCM SoC.
-
 endmenu

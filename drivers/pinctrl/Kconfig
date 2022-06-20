@@ -298,7 +298,6 @@ config PINCTRL_K210
 	  Support pin multiplexing on the K210. The "FPIOA" can remap any
 	  supported function to any multifunctional IO pin. It can also perform
 	  basic GPIO functions, such as reading the current value of a pin.
-
 endif
 
 source "drivers/pinctrl/broadcom/Kconfig"
@@ -314,6 +313,5 @@ source "drivers/pinctrl/nxp/Kconfig"
 source "drivers/pinctrl/renesas/Kconfig"
 source "drivers/pinctrl/rockchip/Kconfig"
 source "drivers/pinctrl/uniphier/Kconfig"
-source "drivers/pinctrl/nuvoton/Kconfig"
 
 endmenu

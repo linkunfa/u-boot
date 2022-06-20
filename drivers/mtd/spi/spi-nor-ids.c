@@ -63,11 +63,6 @@
  * old entries may be missing 4K flag.
  */
 const struct flash_info spi_nor_ids[] = {
-#ifdef CONFIG_SPI_FLASH_GOOGLE		/* GOOGLE */
-	{INFO("hoth-512",	0x260217, 0x0, 64 * 1024,   512, SECT_4K) },
-	{INFO("hoth-1024",	0x26021a, 0x0, 64 * 1024,  1024, SECT_4K) },
-	{INFO("hoth2-1024",	0x26221a, 0x0, 64 * 1024,  1024, SECT_4K) },
-#endif
 #ifdef CONFIG_SPI_FLASH_ATMEL		/* ATMEL */
 	/* Atmel -- some are (confusingly) marketed as "DataFlash" */
 	{ INFO("at26df321",	0x1f4700, 0, 64 * 1024, 64, SECT_4K) },
@@ -163,7 +158,7 @@ const struct flash_info spi_nor_ids[] = {
 	{ INFO("mx25l12805d", 0xc22018, 0, 64 * 1024, 256, SECT_4K) },
 	{ INFO("mx25u12835f", 0xc22538, 0, 64 * 1024, 256, SECT_4K) },
 	{ INFO("mx25l12855e", 0xc22618, 0, 64 * 1024, 256, 0) },
-	{ INFO("mx25l25635e", 0xc22019, 0, 64 * 1024, 512, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ | SPI_NOR_4B_OPCODES) },
+	{ INFO("mx25l25635e", 0xc22019, 0, 64 * 1024, 512, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
 	{ INFO("mx25u25635f", 0xc22539, 0, 64 * 1024, 512, SECT_4K | SPI_NOR_4B_OPCODES) },
 	{ INFO("mx25l25655e", 0xc22619, 0, 64 * 1024, 512, 0) },
 	{ INFO("mx66l51235l", 0xc2201a, 0, 64 * 1024, 1024, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ | SPI_NOR_4B_OPCODES) },
@@ -322,11 +317,6 @@ const struct flash_info spi_nor_ids[] = {
 	},
 	{
 		INFO("w25q256jw", 0xef7019, 0, 64 * 1024, 512,
-			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
-			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
-	},
-	{
-		INFO("w25q512jv", 0xef4020, 0, 64 * 1024, 1024,
 			SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
 			SPI_NOR_HAS_LOCK | SPI_NOR_HAS_TB)
 	},

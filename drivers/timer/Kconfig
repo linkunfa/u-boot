@@ -143,12 +143,6 @@ config NOMADIK_MTU_TIMER
 	  The MTU provides 4 decrementing free-running timers.
 	  At the moment, only the first timer is used by the driver.
 
-config NPCM_TIMER
-	bool "Nuvoton NPCM timer support"
-	depends on TIMER
-	help
-	  Select this to enable a timer on Nuvoton NPCM SoCs.
-
 config OMAP_TIMER
 	bool "Omap timer support"
 	depends on TIMER
@@ -233,5 +227,11 @@ config MCHP_PIT64B_TIMER
 	  Select this to enable support for Microchip 64-bit periodic
 	  interval timer.
 
+config IMX_GPT_TIMER
+	bool "NXP i.MX GPT timer support"
+	depends on TIMER
+	help
+	  Select this to enable support for the timer found on
+	  NXP i.MX devices.
 
 endmenu
